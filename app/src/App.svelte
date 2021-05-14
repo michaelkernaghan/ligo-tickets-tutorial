@@ -20,8 +20,8 @@
   let loadingBuy = false;
   let loadingRedeem = false;
 
-  const rpcUrl = "https://api.tez.ie/rpc/edonet";
-  const ticketerAddress = "KT1EcbFRKTtEQy9fDD769Gj7VtqeEw5eBcyS";
+  const rpcUrl = "https://api.tez.ie/rpc/florencenet";
+  const ticketerAddress = "KT1Vv3kTDW4rz5JhgM8XZgxcrRwFhHXXQQt6";
 
   const fetchUserTickets = async (
     address: string,
@@ -54,11 +54,11 @@
     try {
       wallet = new BeaconWallet({
         name: "Ligo Tickets Tutorial",
-        preferredNetwork: NetworkType.EDONET
+        preferredNetwork: NetworkType.FLORENCENET
       });
       await wallet.requestPermissions({
         network: {
-          type: NetworkType.EDONET,
+          type: NetworkType.FLORENCENET,
           rpcUrl
         }
       });
@@ -147,7 +147,7 @@
     Tezos = new TezosToolkit(rpcUrl);
     wallet = new BeaconWallet({
       name: "Ligo Tickets Tutorial",
-      preferredNetwork: NetworkType.CUSTOM
+      preferredNetwork: NetworkType.FLORENCENET
     });
     const activeAccount = await wallet.client.getActiveAccount();
     if (activeAccount) {

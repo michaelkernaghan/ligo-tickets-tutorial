@@ -37,7 +37,6 @@
     "validate": "svelte-check"
   },
   "dependencies": {
-    "@microsoft/signalr": "^5.0.4",
     "@taquito/beacon-wallet": "^9.0.0",
     "@taquito/taquito": "^9.0.0",
     "file-loader": "^6.2.0"
