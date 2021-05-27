@@ -281,14 +281,19 @@
                 ).toISOString()}
               </div>
             {:else}
-              You don't have any ticket yet.
+              You don't have any tickets yet.
             {/if}
           </div>
           <br />
           <div class="buttons">
             <button
               class:loading={loadingBuy}
-              on:click={async () => await buyTickets(1)}
+              disabled={loadingBuy}
+              on:click={async () => {
+                if (!loadingBuy) {
+                  await buyTickets(1);
+                }
+              }}
             >
               Buy 1 standard ticket
             </button>
